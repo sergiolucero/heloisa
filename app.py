@@ -1,4 +1,4 @@
-import streamlit as st
+import os, streamlit as st
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import WebBaseLoader

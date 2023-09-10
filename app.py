@@ -17,6 +17,7 @@ HumanMessagePromptTemplate.from_template("{question}"),]
 prompt = ChatPromptTemplate.from_messages(messages)
 chain_type_kwargs = {"prompt": prompt}
 #####################################################
+print('KIPÁ MASHUKAO?')
 def main():
     st.title('  Chateando Con Página Web')
     st.subheader('Escribe una dirección Web, haz preguntas y recibe respuestas del sitio')

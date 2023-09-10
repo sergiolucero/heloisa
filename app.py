@@ -32,17 +32,17 @@ if st.button("Contesta", type="primary"):
     loader = WebBaseLoader(url)
     data = loader.load()
 
-text_splitter = CharacterTextSplitter(separator='\n', 
-     chunk_size=8000,  chunk_overlap=40)
-docs = text_splitter.split_documents(data)
-
-openai_embeddings = OpenAIEmbeddings()
-vectordb = Chroma.from_documents(documents=docs, embedding=openai_embeddings, persist_directory=DB_DIR)
-vectordb.persist()
-
-retriever = vectordb.as_retriever(search_kwargs={"k": 3})
-llm = ChatOpenAI(model_name='gpt-3.5-turbo')
-qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
-
-response = qa(prompt)
-st.write(response)    # TO DO: show reasoning as in https://langchain-mrkl.streamlit.app/
+    text_splitter = CharacterTextSplitter(separator='\n', 
+         chunk_size=8000,  chunk_overlap=40)
+    docs = text_splitter.split_documents(data)
+    
+    openai_embeddings = OpenAIEmbeddings()
+    vectordb = Chroma.from_documents(documents=docs, embedding=openai_embeddings, persist_directory=DB_DIR)
+    vectordb.persist()
+    
+    retriever = vectordb.as_retriever(search_kwargs={"k": 3})
+    llm = ChatOpenAI(model_name='gpt-3.5-turbo')
+    qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever)
+    
+    response = qa(prompt)
+    st.write(response)    # TO DO: show reasoning as in https://langchain-mrkl.streamlit.app/

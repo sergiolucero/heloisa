@@ -4,4 +4,5 @@ langchain
 langchain-experimental
 openai
 streamlit
+streamlit-agent
 tiktoken

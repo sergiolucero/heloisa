@@ -1,5 +1,6 @@
 bs4
 chromadb
+duckduckgo-search
 langchain
 langchain-experimental
 openai

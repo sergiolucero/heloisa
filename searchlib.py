@@ -26,7 +26,7 @@ def search():
         user_input = st.text_input("ask your own question")
         submit_clicked = st.form_submit_button("Submit Question")
         output_container = st.empty()
-        if with_clear_container(submit_clicked):
+        if submit_clicked:
             output_container = output_container.container()
             output_container.chat_message("user").write(user_input)
         

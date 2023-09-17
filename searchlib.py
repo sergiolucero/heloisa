@@ -1,8 +1,7 @@
 from pathlib import Path
 import streamlit as st
 
-from langchain.agents import AgentType
-from langchain.agents import initialize_agent, Tool
+from langchain.agents import AgentType, initialize_agent, Tool
 from langchain.callbacks import StreamlitCallbackHandler
 from langchain.llms import OpenAI
 from langchain.utilities import DuckDuckGoSearchAPIWrapper
